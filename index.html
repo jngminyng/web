@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>언제나, 크리스마스</title>
+    <link
+      rel="icon"
+      type="images/favicon_gift.png"
+      href="images/favicon_gift.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!--css sheet-->
+    <link rel="stylesheet" href="jngminyng.css" />
+    <!-- google fonts -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target="#nav-menu">
+    <!-- navigation-->
+    <nav
+      class="navbar navbar-expand-md fixed-top"
+      style="background-color: none"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#home" style="color: white">
+          <img
+            src="images/logo.png"
+            alt="logo"
+            style="width: 80%; height: 80%"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav-menu"
+          aria-controls="nav-menu"
+          aria-expanded="false"
+          aria-label="menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav-menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#home"
+                style="color: #edeae4; font-size: larger"
+                >홈</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#news"
+                style="color: #edeae4; font-size: larger"
+                >크리스마스 소식</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#photo"
+                style="color: #edeae4; font-size: larger"
+                >사진</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#map"
+                style="color: #edeae4; font-size: larger"
+                >산타 마을</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- header-->
+    <header
+      id="home"
+      class="d-flex flex-column justify-content-center align-items-center vh-100 text-white"
+    >
+      <h2 class="display-3 fw-bold mb-3 fs-4">크리스마스까지 남은 시간</h2>
+      <h2
+        class="mb-3 fs-1"
+        id="demo"
+        style="font-family: 'Vina Sans', sans-serif"
+      ></h2>
+      <script>
+        var countDownDate = new Date("dec 25, 2024 00:00:00").getTime();
+
+        var x = setInterval(function () {
+          var now = new Date().getTime();
+
+          var distance = countDownDate - now;
+
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          document.getElementById("demo").innerHTML =
+            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+      </script>
+      <h4>⬇️ 캐롤 재생하기 ⬇️</h4>
+      <audio
+        controls
+        type="button"
+        class="btn rounded-pill mb-5"
+        autoplay="true"
+        loop="true"
+      >
+        <source src="Christmas Village - Aaron Kenny.mp3" type="audio/mp3" />
+      </audio>
+
+      <video
+        id="background-video"
+        autoplay
+        loop
+        muted
+        poster="images/santaclaus.jpg"
+      >
+        <source src="santa's letter.mp4" type="video/mp4" />
+      </video>
+    </header>
+    <p class="text-end px-5 py-1" style="color: white">
+      Background video is designed by Freepik
+    </p>
+
+    <!--크리스마스 소식-->
+    <section class="py-3" id="news" style="background-color: #ffffff">
+      <div class="container overflow-hidden">
+        <div class="text-center py-5">
+          <p class="fw-bold fs-4">크리스마스 소식 &#128238;</p>
+          <p>크리스마스와 관련된 다양한 이야기가 궁금하다면?</p>
+        </div>
+      </div>
+
+      <a href="santa_news.html">
+        <img
+          src="images/banner(1).jpg"
+          alt="images/banner(1).jpg"
+          width="100%"
+          height="100%"
+        />
+      </a>
+      <a href="tree_news.html"
+        ><img
+          src="images/banner(2).jpg"
+          alt="images/banner(2).jpg"
+          width="100%"
+          height="100%"
+      /></a>
+      <a href="food_news.html">
+        <img
+          src="images/banner(3).jpg"
+          alt="images/banner(3).jpg"
+          width="100%"
+          height="100%"
+      /></a>
+    </section>
+
+    <!--크리스마스 사진-->
+    <section class="py-1" id="photo" style="background-color: white">
+      <div class="container overflow-hidden align-items-center">
+        <div class="text-center py-5">
+          <p class="fw-bold fs-4">크리스마스 사진 &#128248;</p>
+          <p>
+            크리스마스 분위기를 느낄 수 있는 동물, 음식, 산타 클로스 사진을
+            구경해보세요!
+          </p>
+        </div>
+        <div class="container-fluid row pb-5 g-5">
+          <div class="col-sm-6 col-lg-4">
+            <a href="#"
+              ><img
+                src="images/photo_animals.jpg"
+                alt="images/photo_animals.jpg"
+                class="img-fluid card-hover rounded-circle p-1"
+              />
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <a href="food_pic.html">
+              <img
+                src="images/photo_food.jpg"
+                alt="images/photo_food.jpg"
+                class="img-fluid card-hover rounded-circle p-1"
+              />
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <a href="#">
+              <img
+                src="images/photo_santa.jpg"
+                alt="images/photo_santa.jpg"
+                class="img-fluid card-hover rounded-circle p-1"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--산타 마을-->
+    <section class="py-5" id="map" style="background-color: #ffffff">
+      <div class="container overflow-hidden align-items-center">
+        <div class="text-center py-1">
+          <p class="fw-bold fs-4">산타 마을 지도 &#128642;</p>
+          <p>
+            산타 클로스 마을로 유명한 핀란드의 로바니에미(Rovaniemi) 마을이
+            이곳에 있어요.
+          </p>
+        </div>
+        <div class="container overflow-hidden text-center">
+          <div class="row gx-5">
+            <div class="col py-5">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1588.1506696259205!2d25.8446223775792!3d66.54361437887216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x442b4e7e543e9979%3A0xd7f9b9e4341d7ed3!2z7IKw7YOA7YG066Gc7IqkIOuniOydhA!5e0!3m2!1sko!2skr!4v1702194091544!5m2!1sko!2skr"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="col py-5">
+              <h1 style="text-align: left">
+                산타 클로스의 <strong>공식 거주지</strong>로 알려진 <br />핀란드
+                북부 라플란드의 중심 도시
+              </h1>
+              <br />
+              <p style="text-align: left">
+                산타클로스 마을(Santa Claus Village)은 핀란드 로바니에미에
+                위치한 테마파크이다. <br />
+                로바니에미 북동쪽 8km, 로바니에미 공항에서 2km 되는 곳에
+                위치하고 있으며, <br />
+                로바니에미 역에서는 시내버스 8번으로 30분 가량 소요된다.
+              </p>
+              <p style="text-align: left">
+                유명한 관광 명소로는 북극의 시작이 되는 흰색 라인(북극권),
+                크리스마스 카드 / CD 등을 판매하는 대형 산타 클로스 우체국,
+                산타클로스와 함께 사진을 촬영할 수 있는 산타 클로스 사무실 등이
+                있다. 산타 클로스 우체국에서 발송하는 모든 메일은 산타클로스의
+                특별 소인이 찍혀져 있어 관광객들에게 인기가 높다.
+              </p>
+              <p style="text-align: left" class="text-muted">
+                출처 | 위키백과 (Wikipedia)
+              </p>
+              <br />
+              <p style="text-align: left">
+                <a href="https://santaclausvillage.info/"
+                  >산타클로스 마을 공식 사이트 &#128204;</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a href="#"
+      ><img
+        src="images/footer.jpg"
+        alt="images/footer.jpg"
+        width="100%"
+        height="100%"
+    /></a>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
